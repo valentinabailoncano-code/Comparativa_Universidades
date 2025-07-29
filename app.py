@@ -37,19 +37,50 @@ st.markdown("---")
 if pagina == "📘 Descripción del Proyecto":
     st.title("📘 Descripción del Proyecto")
     st.markdown("""
-Este proyecto nace del análisis comparativo de las políticas de ayuda financiera de universidades internacionales de prestigio, realizado durante una práctica en el departamento de Financial Aid de IE University en verano de 2025.
+Este proyecto nace del análisis comparativo de las políticas de ayuda financiera ofrecidas por universidades internacionales de prestigio, y fue desarrollado en el contexto de unas prácticas profesionales en el Departamento de Financial Aid de **IE University** durante el verano de 2025.
+
+La idea surgió al detectar la necesidad de una herramienta visual, clara y centralizada que permita comparar rápidamente las condiciones de becas entre distintas instituciones, no solo desde el punto de vista del estudiante, sino también como herramienta de análisis estratégico interno para IE.
+
+---
 
 ### 🧭 Objetivo
-Ofrecer una plataforma interactiva que permita comparar rápidamente el nivel de transparencia, tipos de becas, documentación requerida, calendario y herramientas que ofrecen distintas universidades.
 
-### 🧩 Estructura del comparador
-1. **Comparador para Grado** (en desarrollo)
-2. **Comparador para Máster** (disponible)
-3. **Recomendaciones estratégicas para IE University**
+🎯 Ofrecer una **plataforma interactiva** que permita:
 
-La app está desarrollada en Python con Streamlit, Plotly y Pandas.  
-Desarrollada por: **Valentina Bailon Cano**
+- Comparar de forma objetiva la transparencia, tipos de ayudas, procesos y herramientas ofrecidas por universidades líderes.
+- Evaluar qué buenas prácticas podrían ser adoptadas o adaptadas por IE University.
+- Servir como punto de partida para construir futuras comparativas por **nivel educativo**, **región geográfica**, o **tipo de beca**.
+
+---
+
+### 🧩 Estructura del Comparador
+
+🔹 El comparador está organizado en 4 secciones principales:
+
+1. **🎓 Comparador de Becas para Grado** (en desarrollo)
+2. **🎓 Comparador de Becas para Máster** (disponible)
+3. **💡 Recomendaciones Estratégicas para IE**
+4. **📘 Descripción General del Proyecto**
+
+---
+
+### 🛠️ Tecnologías Utilizadas
+
+- Lenguaje: Python 3
+- Librerías: **Streamlit**, **Pandas**, **Plotly**
+- Visualizaciones dinámicas e interactivas
+- Proyecto desplegado en la nube mediante **Streamlit Cloud**
+- Código abierto en GitHub
+
+---
+
+### 👩‍💻 Autora
+
+Este proyecto ha sido desarrollado de forma individual por **Valentina Bailon Cano**, estudiante de Business Analytics y miembro del equipo de prácticas del Departamento de Ayuda Financiera de IE University.
+
+Puedes consultar el código fuente y evolución del proyecto en GitHub.
 """)
+
 
 # Página 2 - Comparador de Grado
 elif pagina == "🎓 Comparador de Becas para Grado":
