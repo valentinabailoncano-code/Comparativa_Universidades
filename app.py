@@ -5,6 +5,48 @@ import plotly.express as px
 # Configuración de la página
 st.set_page_config(page_title="Comparador de Universidades", layout="wide")
 
+# Estilo empresarial y sobrio
+st.markdown("""
+<style>
+/* Título principal */
+.big-title {
+    font-size: 30px !important;
+    font-weight: 600;
+    color: #002060;
+    margin-bottom: 0.5rem;
+}
+.sub-title {
+    font-size: 16px;
+    color: #444;
+    margin-top: -10px;
+    margin-bottom: 1rem;
+}
+
+/* Tipografía general */
+html, body, [class*="css"] {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+}
+
+/* Margen superior reducido */
+section.main > div:first-child {
+    padding-top: 0rem;
+}
+
+/* Encabezados markdown */
+h1, h2, h3 {
+    color: #1a1a1a;
+    font-weight: 500;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 1rem 0;
+}
+</style>
+""", unsafe_allow_html=True)
+
 # Navegación principal
 st.sidebar.title("📚 Índice")
 pagina = st.sidebar.radio("Selecciona una sección:", [
@@ -14,24 +56,9 @@ pagina = st.sidebar.radio("Selecciona una sección:", [
     "💡 Recomendaciones para IE"
 ])
 
-# Estilos visuales
-st.markdown("""
-<style>
-.big-title {
-    font-size:40px !important;
-    font-weight: bold;
-    color: #003262;
-}
-.sub-title {
-    font-size:20px;
-    color: #666666;
-}
-</style>
-""", unsafe_allow_html=True)
+st.markdown('<div class="big-title">Comparador de Universidades por Ayuda Financiera</div>', unsafe_allow_html=True)
+st.markdown('<div class="sub-title">Proyecto de Benchmarking · IE University · Verano 2025 · Valentina Bailon Cano</div>', unsafe_allow_html=True)
 
-st.markdown('<div class="big-title">📘 Comparador de Universidades por Ayuda Financiera</div>', unsafe_allow_html=True)
-st.markdown('<div class="sub-title">Proyecto de Benchmarking – IE University · Verano 2025 · Desarrollado por Valentina Bailon Cano</div>', unsafe_allow_html=True)
-st.markdown("---")
 
 # Página 1 - Descripción del Proyecto
 if pagina == "📘 Descripción del Proyecto":
