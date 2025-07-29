@@ -5,11 +5,16 @@ import plotly.express as px
 # Configuración de la página
 st.set_page_config(page_title="Comparador de Universidades", layout="wide")
 
-# Selector de página
-st.sidebar.title("📚 Navegación")
-pagina = st.sidebar.radio("Ir a:", ["Comparador", "Recomendaciones para IE"])
+# Navegación principal
+st.sidebar.title("📚 Índice")
+pagina = st.sidebar.radio("Selecciona una sección:", [
+    "📘 Descripción del Proyecto",
+    "🎓 Comparador de Becas para Grado",
+    "🎓 Comparador de Becas para Máster",
+    "💡 Recomendaciones para IE"
+])
 
-# Portada visual y bienvenida
+# Estilos visuales
 st.markdown("""
 <style>
 .big-title {
@@ -28,25 +33,44 @@ st.markdown('<div class="big-title">📘 Comparador de Universidades por Ayuda F
 st.markdown('<div class="sub-title">Proyecto de Benchmarking – IE University · Verano 2025 · Desarrollado por Valentina Bailon Cano</div>', unsafe_allow_html=True)
 st.markdown("---")
 
-# Si estamos en el modo COMPARADOR
-if pagina == "Comparador":
-    # Título y descripción
-    st.title("🎓 Comparador de Becas para Máster")
+# Página 1 - Descripción del Proyecto
+if pagina == "📘 Descripción del Proyecto":
+    st.title("📘 Descripción del Proyecto")
     st.markdown("""
-    Esta aplicación permite comparar las políticas de ayuda financiera de distintas universidades internacionales.
-    Los datos provienen de un análisis realizado por IE University en verano de 2025.  
-    Puedes seleccionar universidades en el menú lateral para explorar su oferta de becas, nivel de transparencia y herramientas de apoyo.
+Este proyecto nace del análisis comparativo de las políticas de ayuda financiera de universidades internacionales de prestigio, realizado durante una práctica en el departamento de Financial Aid de IE University en verano de 2025.
+
+### 🧭 Objetivo
+Ofrecer una plataforma interactiva que permita comparar rápidamente el nivel de transparencia, tipos de becas, documentación requerida, calendario y herramientas que ofrecen distintas universidades.
+
+### 🧩 Estructura del comparador
+1. **Comparador para Grado** (en desarrollo)
+2. **Comparador para Máster** (disponible)
+3. **Recomendaciones estratégicas para IE University**
+
+La app está desarrollada en Python con Streamlit, Plotly y Pandas.  
+Desarrollada por: **Valentina Bailon Cano**
     """)
 
-    # Cargar datos
+# Página 2 - Comparador de Grado
+elif pagina == "🎓 Comparador de Becas para Grado":
+    st.title("🎓 Comparador de Becas para Grado")
+    st.info("🔧 Esta sección está actualmente en desarrollo. Pronto incluirá datos y visualizaciones comparativas para titulaciones de grado.")
+
+# Página 3 - Comparador de Máster
+elif pagina == "🎓 Comparador de Becas para Máster":
+    st.title("🎓 Comparador de Becas para Máster")
+    st.markdown("""
+Esta aplicación permite comparar las políticas de ayuda financiera de distintas universidades internacionales.
+Los datos provienen de un análisis realizado por IE University en verano de 2025.  
+Puedes seleccionar universidades en el menú lateral para explorar su oferta de becas, nivel de transparencia y herramientas de apoyo.
+    """)
+
     @st.cache_data
     def load_data():
-        df = pd.read_csv("data/benchmarking_master.csv")
-        return df
+        return pd.read_csv("data/benchmarking_master.csv")
 
     df = load_data()
 
-    # Filtros laterales
     st.sidebar.header("🔍 Filtros")
     universidades = st.sidebar.multiselect(
         "Selecciona universidades:",
@@ -54,17 +78,13 @@ if pagina == "Comparador":
         default=df["University"].unique()
     )
 
-    # Aplicar filtro
     df_filtered = df[df["University"].isin(universidades)]
 
-    # Mostrar tabla comparativa
     st.subheader("📊 Tabla Comparativa")
     st.dataframe(df_filtered, use_container_width=True)
 
-    # Visualización: Radar Chart
     st.subheader("📈 Comparativa Visual (Radar)")
 
-    # Conversión cualitativa a numérica
     scale_map = {
         "None": 1, "Basic": 2, "Limited": 2, "Medium": 3, "Some stats": 3,
         "Good": 4, "Defined": 4, "Structured": 4,
@@ -73,11 +93,9 @@ if pagina == "Comparador":
         "Detailed listings": 4, "Clear": 4
     }
 
-    # Aplicar la conversión
     for col in ["Transparency", "App Process Clarity", "Data Disclosure", "Timeline Visibility", "Tools & Support", "UX & Accessibility"]:
         df_filtered[col + " (Score)"] = df_filtered[col].map(scale_map).fillna(3)
 
-    # Mostrar radar chart si hay al menos dos universidades
     if len(df_filtered) > 1:
         radar_df = df_filtered[["University"] + [col + " (Score)" for col in ["Transparency", "App Process Clarity", "Data Disclosure", "Timeline Visibility", "Tools & Support", "UX & Accessibility"]]]
         radar_df = radar_df.set_index("University").T
@@ -89,11 +107,9 @@ if pagina == "Comparador":
     else:
         st.info("Selecciona al menos dos universidades para ver el gráfico radar.")
 
-    # Ficha individual si se selecciona solo una universidad
     if len(df_filtered) == 1:
         st.subheader("📄 Ficha Detallada")
         uni = df_filtered.iloc[0]
-        
         st.markdown(f"### 🎓 {uni['University']}")
         st.markdown(f"**Tipos de ayuda**: {uni['Types of Aid']}")
         st.markdown(f"**Importe de las becas**: {uni['Scholarship Amounts']}")
@@ -107,10 +123,7 @@ if pagina == "Comparador":
         st.markdown(f"**Información sobre coste de vida**: {uni['Cost of Living Info']}")
         st.markdown(f"**Puntuación Global**: {uni['Overall Rating']} / 5 ⭐")
 
-    # Gráfico de barras: Ranking por puntuación global
     st.subheader("🏆 Ranking por Puntuación Global")
-
-    # Ordenar por puntuación descendente
     ranking_df = df_filtered.sort_values(by="Overall Rating", ascending=False)
 
     fig = px.bar(
@@ -123,11 +136,9 @@ if pagina == "Comparador":
         title="Universidades ordenadas por puntuación global",
         labels={"Overall Rating": "Puntuación", "University": "Universidad"}
     )
-
     fig.update_layout(yaxis=dict(autorange="reversed"))
     st.plotly_chart(fig, use_container_width=True)
 
-    # Botón para exportar ranking
     st.download_button(
         label="⬇️ Descargar Ranking como CSV",
         data=ranking_df.to_csv(index=False).encode('utf-8'),
@@ -135,8 +146,8 @@ if pagina == "Comparador":
         mime="text/csv"
     )
 
-# Si estamos en el modo RECOMENDACIONES
-elif pagina == "Recomendaciones para IE":
+# Página 4 - Recomendaciones
+elif pagina == "💡 Recomendaciones para IE":
     st.title("💡 Recomendaciones Estratégicas para IE University")
     st.markdown("""
 Basado en el análisis de 12 universidades top europeas y globales, IE podría mejorar su estrategia de ayuda financiera en los siguientes aspectos:
@@ -168,4 +179,3 @@ Basado en el análisis de 12 universidades top europeas y globales, IE podría m
 
 Estas ideas pueden posicionar a IE como referente europeo no solo en diversidad de fondos, sino también en **claridad y experiencia del usuario**.
     """)
-
