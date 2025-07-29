@@ -49,7 +49,7 @@ Ofrecer una plataforma interactiva que permita comparar rápidamente el nivel de
 
 La app está desarrollada en Python con Streamlit, Plotly y Pandas.  
 Desarrollada por: **Valentina Bailon Cano**
-    """)
+""")
 
 # Página 2 - Comparador de Grado
 elif pagina == "🎓 Comparador de Becas para Grado":
@@ -63,7 +63,7 @@ elif pagina == "🎓 Comparador de Becas para Máster":
 Esta aplicación permite comparar las políticas de ayuda financiera de distintas universidades internacionales.
 Los datos provienen de un análisis realizado por IE University en verano de 2025.  
 Puedes seleccionar universidades en el menú lateral para explorar su oferta de becas, nivel de transparencia y herramientas de apoyo.
-    """)
+""")
 
     @st.cache_data
     def load_data():
@@ -178,4 +178,4 @@ Basado en el análisis de 12 universidades top europeas y globales, IE podría m
 ---
 
 Estas ideas pueden posicionar a IE como referente europeo no solo en diversidad de fondos, sino también en **claridad y experiencia del usuario**.
-    """)
+""")
