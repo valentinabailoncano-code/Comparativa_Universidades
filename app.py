@@ -37,49 +37,50 @@ st.markdown("---")
 if pagina == "📘 Descripción del Proyecto":
     st.title("📘 Descripción del Proyecto")
     st.markdown("""
-Este proyecto nace del análisis comparativo de las políticas de ayuda financiera ofrecidas por universidades internacionales de prestigio, y fue desarrollado en el contexto de unas prácticas profesionales en el Departamento de Financial Aid de **IE University** durante el verano de 2025.
+Este proyecto ha sido desarrollado como parte de una práctica profesional en el Departamento de Financial Aid de **IE University**, con el objetivo de realizar un análisis estructurado de las políticas de ayuda financiera de universidades líderes a nivel internacional.
 
-La idea surgió al detectar la necesidad de una herramienta visual, clara y centralizada que permita comparar rápidamente las condiciones de becas entre distintas instituciones, no solo desde el punto de vista del estudiante, sino también como herramienta de análisis estratégico interno para IE.
-
----
-
-### 🧭 Objetivo
-
-🎯 Ofrecer una **plataforma interactiva** que permita:
-
-- Comparar de forma objetiva la transparencia, tipos de ayudas, procesos y herramientas ofrecidas por universidades líderes.
-- Evaluar qué buenas prácticas podrían ser adoptadas o adaptadas por IE University.
-- Servir como punto de partida para construir futuras comparativas por **nivel educativo**, **región geográfica**, o **tipo de beca**.
+La iniciativa responde a la necesidad de disponer de una herramienta comparativa clara, interactiva y profesional que permita evaluar la competitividad de la oferta de becas de IE frente a otras instituciones, identificando fortalezas, oportunidades de mejora y buenas prácticas replicables.
 
 ---
 
-### 🧩 Estructura del Comparador
+### 🎯 Objetivo Estratégico
 
-🔹 El comparador está organizado en 4 secciones principales:
+Desarrollar una plataforma de benchmarking que permita:
 
-1. **🎓 Comparador de Becas para Grado** (en desarrollo)
-2. **🎓 Comparador de Becas para Máster** (disponible)
-3. **💡 Recomendaciones Estratégicas para IE**
-4. **📘 Descripción General del Proyecto**
-
----
-
-### 🛠️ Tecnologías Utilizadas
-
-- Lenguaje: Python 3
-- Librerías: **Streamlit**, **Pandas**, **Plotly**
-- Visualizaciones dinámicas e interactivas
-- Proyecto desplegado en la nube mediante **Streamlit Cloud**
-- Código abierto en GitHub
+- Evaluar el nivel de transparencia, cobertura y diversidad de las ayudas financieras ofrecidas por universidades internacionales.
+- Comparar procesos, documentación, calendarios y herramientas digitales utilizadas en la comunicación de becas.
+- Apoyar la toma de decisiones internas en IE University mediante datos estructurados y visualización interactiva.
+- Servir como punto de referencia para implementar mejoras en el posicionamiento de la oferta institucional de IE.
 
 ---
 
-### 👩‍💻 Autora
+### 🧩 Estructura del Proyecto
 
-Este proyecto ha sido desarrollado de forma individual por **Valentina Bailon Cano**, estudiante de Business Analytics y miembro del equipo de prácticas del Departamento de Ayuda Financiera de IE University.
+El sistema se organiza en cuatro módulos principales:
 
-Puedes consultar el código fuente y evolución del proyecto en GitHub.
+1. **Comparador de Becas para Programas de Grado** *(en desarrollo)*
+2. **Comparador de Becas para Programas de Máster** *(activo)*
+3. **Recomendaciones Estratégicas para IE University**
+4. **Descripción General y Propósito del Proyecto**
+
+---
+
+### ⚙️ Tecnología y Enfoque Metodológico
+
+La solución ha sido desarrollada utilizando tecnologías de código abierto y un enfoque modular que permite su escalabilidad futura.  
+Se ha empleado:
+
+- **Python**, con soporte de bibliotecas como **Streamlit**, **Pandas** y **Plotly**.
+- Visualizaciones interactivas y tablas comparativas en tiempo real.
+- Infraestructura basada en **Streamlit Cloud** para despliegue público y GitHub como repositorio de código y control de versiones.
+
+---
+
+### 👩‍💼 Autora del Proyecto
+
+Este proyecto ha sido desarrollado de forma individual por **Valentina Bailon Cano**, estudiante de Business Analytics y miembro del equipo de prácticas del Departamento de Ayuda Financiera de IE University, con el objetivo de generar valor institucional y aplicabilidad real.
 """)
+
 
 
 # Página 2 - Comparador de Grado
