@@ -296,57 +296,87 @@ Puedes seleccionar universidades en el menú lateral para explorar su oferta de 
     )
 
 # Página 4 - Recomendaciones
-# Página 4 - Recomendaciones
 elif pagina == "💡 Recomendaciones para IE":
-    st.title("💡 Recomendaciones Estratégicas para IE University")
+    st.title("💡 Recomendaciones Estratégicas para el Departamento de Ayuda Financiera (FAID)")
     st.markdown("""
-Estas recomendaciones se basan en el análisis comparativo de ayudas financieras en universidades internacionales de prestigio, aplicando criterios como transparencia, claridad, soporte y diferenciación.  
-Se presentan divididas por **Grado** y **Máster**, para maximizar el valor percibido por cada tipo de candidato.
+Estas recomendaciones están basadas en el análisis detallado de las páginas, procesos y políticas de ayuda financiera de universidades líderes en **grado y máster**, con el objetivo de fortalecer la propuesta de valor de IE frente a sus principales competidores directos en cada nivel.
 
 ---
 
-## 🎓 Recomendaciones para Grado
+## 🎓 Recomendaciones para GRADO
 
-### 1. 🧒 Mayor enfoque a perfiles sin experiencia universitaria
-- Simplificar el lenguaje en la sección de becas.
-- Incluir vídeos/pasos guiados para padres y alumnos preuniversitarios.
-- Visibilizar mejor las becas regionales y acuerdos con colegios.
+### 1. 📱 Mini app financiera pre-admisión
+- Crear una **aplicación ligera o simulador interactivo** para móviles que muestre:
+  - Coste total estimado por campus (Segovia/Madrid)
+  - Ayudas disponibles por nacionalidad o perfil
+  - Calendario de aplicación personalizado
+- Esta app podría usarse como herramienta promocional en ferias o visitas.
 
-### 2. 📍 Calculadora pregrado + orientación visual
-- Añadir simuladores que muestren matrícula, ayuda y coste de vida adaptado a Segovia o Madrid.
-- Posibilidad de comparar 2 o más programas.
+### 2. 📊 Publicación de datos agregados de ayuda financiera
+- Aunque existe buena visibilidad de las becas, no se publican cifras como:
+  - % de estudiantes de grado que reciben ayuda
+  - Promedio del importe concedido
+  - Distribución por nacionalidad o tipo de ayuda
 
-### 3. 💬 Canal de consulta informal (WhatsApp/Discord/Embajadores)
-- Crear un canal seguro donde aspirantes puedan hablar con estudiantes actuales becados de grado.
+> *KCL y Erasmus, por ejemplo, sí publican datos de contexto o cifras institucionales básicas.*
 
-### 4. 🏫 Posicionamiento diferenciador en acceso equitativo
-- Crear becas públicas tipo "IE First Gen" o "IE Rural Talent" que refuercen inclusión y compromiso social.
+### 3. 🗺️ Mapa visual de ayudas por región/país
+- Una sección visual en la web que permita seleccionar país y ver las becas activas, requisitos y estadísticas.
 
-### 5. 🧠 Alineación emocional con los valores del candidato
-- Dar protagonismo a historias de impacto personal, alumnos de primera generación o con trayectorias atípicas.
-
----
-
-## 🎓 Recomendaciones para Máster
-
-### 1. 📊 Publicar ratios de concesión por programa y ronda
-- Mostrar % de éxito histórico en másteres clave (MIM, MBAs, Finance, Law…).
-- Ayuda a gestionar expectativas y planificar cuándo aplicar.
-
-### 2. 💼 Becas con valor de red y empleabilidad
-- Asociar ayudas a programas de mentoring, empresas partner o eventos de networking exclusivos.
-
-### 3. 🌍 Becas globales temáticas (Tech, Impact, Women in Leadership)
-- IE puede posicionarse como referente en becas asociadas a impacto, innovación y liderazgo.
-
-### 4. 🕐 Acompañamiento post-concesión
-- Tras otorgar la beca, ofrecer asesoría financiera clara sobre matrícula, visado, housing y primeros meses.
-
-### 5. 🏷️ Valor añadido en visibilidad externa
-- IE puede destacar mejor en plataformas internacionales (QS, StudyPortals) mostrando herramientas, claridad y casos de éxito de su proceso.
+### 4. 🧾 Prevalidación informal de perfil
+- Herramienta sin necesidad de login donde un candidato puede indicar: nacionalidad, programa deseado y situación financiera aproximada → y recibe:
+  - Nivel orientativo de elegibilidad
+  - Tipos de ayuda más probables
+  - Documentación sugerida
 
 ---
 
-Estas medidas no solo mejorarían la percepción del candidato, sino que **potenciarían la conversión**, reforzarían la **equidad institucional**, y diferenciarían a IE frente a otras escuelas top europeas y globales.
-""")
+## 🎓 Recomendaciones para MÁSTER
+
+### 5. 📈 Transparencia sobre tasas de concesión
+- Publicar rangos históricos orientativos del porcentaje de solicitudes de beca aprobadas por programa (MIM, MBA, etc.).
+- Puede ser por tramos: `<25%`, `25–50%`, `>50%`.
+
+> *Esto ya lo hace HEC Paris, Bocconi y parcialmente LBS, aumentando la confianza y segmentación de los candidatos.*
+
+### 6. 💼 Segmentación avanzada en simulador financiero
+- Mejorar el simulador para que:
+  - Permita seleccionar programa exacto (no solo School)
+  - Incluya tasas de éxito estimadas según perfil (edad, país, experiencia)
+  - Genere informe descargable o compartible
+
+### 7. 📬 Paquete informativo post-beca (claridad en siguiente paso)
+- Después de recibir la beca, enviar un "Pack FAID" con:
+  - Desglose financiero personalizado
+  - Opciones reales de financiación y aplazamiento
+  - Calendario y fecha límite para confirmar plaza
+
+> *Esto ayuda a que el alumno no abandone la matriculación tras recibir la beca.*
+
+### 8. 🧠 Visibilidad de criterios cualitativos en la evaluación
+- Incluir en la web ejemplos de perfiles o factores cualitativos que FAID valora (impacto, trayectoria, motivación, etc.).
+- Evita percepción de opacidad o arbitrariedad.
+
+---
+
+## 🌍 Recomendaciones Comunes
+
+### 9. 🌱 Becas estratégicas temáticas visibles
+- Crear una línea de becas con visibilidad internacional en temas como:
+  - Tecnología con propósito
+  - Liderazgo femenino
+  - Impacto social en mercados emergentes
+- Aumenta la percepción de compromiso institucional y se alinea con tendencias globales.
+
+### 10. 📣 Casos de éxito reales, orientados a Financial Aid
+- Publicar en la sección de becas:
+  - Historias de candidatos que consiguieron ayuda y su trayectoria posterior
+  - Preferiblemente por programa y región
+- Mejora percepción de accesibilidad real y promueve diversidad.
+
+---
+
+Estas propuestas tienen como objetivo **potenciar el área de FAID** como parte integral de la experiencia del candidato, aumentar la conversión tras concesión de becas y posicionar a IE como una universidad clara, accesible y competitiva en ayuda financiera.
+    """)
+
 
