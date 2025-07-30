@@ -85,8 +85,8 @@ Desarrollar una plataforma de benchmarking que permita:
 
 El sistema se organiza en cuatro módulos principales:
 
-1. **Comparador de Becas para Programas de Grado** *(en desarrollo)*
-2. **Comparador de Becas para Programas de Máster** *(activo)*
+1. **Comparador de Becas para Programas de Grado** 
+2. **Comparador de Becas para Programas de Máster**
 3. **Recomendaciones Estratégicas para IE University**
 4. **Descripción General y Propósito del Proyecto**
 
