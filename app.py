@@ -297,7 +297,7 @@ Puedes seleccionar universidades en el menú lateral para explorar su oferta de 
 
 # Página 4 - Recomendaciones
 elif pagina == "💡 Recomendaciones para IE":
-    st.title("💡 Recomendaciones Estratégicas para el Departamento de Ayuda Financiera (FAID)")
+    st.title("💡 Recomendaciones Estratégicas para el Departamento FAID")
     st.markdown("""
 Estas recomendaciones están basadas en el análisis detallado de las páginas, procesos y políticas de ayuda financiera de universidades líderes en **grado y máster**, con el objetivo de fortalecer la propuesta de valor de IE frente a sus principales competidores directos en cada nivel.
 
