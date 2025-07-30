@@ -312,11 +312,18 @@ Estas recomendaciones están basadas en el análisis detallado de las páginas, 
   - Calendario de aplicación personalizado
 - Esta app podría usarse como herramienta promocional en ferias o visitas.
 
-### 2. 📊 Publicación de datos agregados de ayuda financiera
-- Aunque existe buena visibilidad de las becas, no se publican cifras como:
-  - % de estudiantes de grado que reciben ayuda
-  - Promedio del importe concedido
-  - Distribución por nacionalidad o tipo de ayuda
+### 2. 💬 Test de perfil financiero orientativo (sin compromiso)
+- Implementar un test anónimo y visual donde el candidato pueda indicar:
+  - Nacionalidad, ingresos familiares aproximados, tipo de programa
+  - Interés en financiación o becas
+
+- El sistema le sugiere:
+  - Si su perfil encaja con ayudas disponibles
+  - Qué tipo de documentación le será útil
+  - Qué opciones financieras suele solicitar un perfil similar
+
+> *Esto ayuda al alumno a preparar la solicitud con antelación y mejora la percepción de accesibilidad sin comprometer datos reales.*
+
 
 > *KCL y Erasmus, por ejemplo, sí publican datos de contexto o cifras institucionales básicas.*
 
