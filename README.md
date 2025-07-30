@@ -95,6 +95,6 @@ Estudiante de Business Analytics – Universidad Pontificia Comillas (ICADE)
 Prácticas de Verano 2025 – Departamento FAID – IE University  
 [LinkedIn](https://www.linkedin.com/in/valentinabailoncano)
 
-** Beatriz De Marcos **
+**Beatriz De Marcos**
 Estudiante de Administración de Empresa en Inglés- Universidad Pontificia Comillas (ICADE)
 Prácticas de Verano 2025 – Departamento FAID – IE University  
