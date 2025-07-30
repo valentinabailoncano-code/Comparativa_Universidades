@@ -113,7 +113,97 @@ Este proyecto ha sido desarrollado de forma individual por **Valentina Bailon Ca
 # Página 2 - Comparador de Grado
 elif pagina == "🎓 Comparador de Becas para Grado":
     st.title("🎓 Comparador de Becas para Grado")
-    st.info("🔧 Esta sección está actualmente en desarrollo. Pronto incluirá datos y visualizaciones comparativas para titulaciones de grado.")
+    st.markdown("""
+Esta sección permite comparar la estrategia de ayuda financiera de universidades internacionales en titulaciones de grado.
+Los datos provienen de un análisis realizado por IE University en verano de 2025.  
+Puedes seleccionar universidades en el menú lateral para explorar su oferta de becas, transparencia y soporte al estudiante.
+""")
+
+    @st.cache_data
+    def load_undergrad_data():
+        return pd.read_csv("data/benchmarking_undergraduate.csv")
+
+    df_u = load_undergrad_data()
+
+    st.sidebar.header("🔍 Filtros")
+    universidades_u = st.sidebar.multiselect(
+        "Selecciona universidades (grado):",
+        options=df_u["University"].unique(),
+        default=df_u["University"].unique()
+    )
+
+    df_u_filtered = df_u[df_u["University"].isin(universidades_u)]
+
+    st.subheader("📊 Tabla Comparativa")
+    st.dataframe(df_u_filtered, use_container_width=True)
+
+    st.subheader("📈 Comparativa Visual (Radar)")
+
+    score_map = {
+        "None": 1, "Basic": 2, "Limited": 2, "Medium": 3,
+        "Good": 4, "Clear": 4, "Defined": 4,
+        "Very clear": 5, "Excellent": 5, "Descriptive + stats": 4,
+        "Clear eligibility descriptions": 5, "Clear coverage": 4,
+        "Clear per type": 4, "Aggregated only": 2,
+        "User estimates": 3, "Not integrated": 2
+    }
+
+    for col in ["Transparency of Info", "Application Process Clarity", "Data Disclosure", "Timeline Visibility", "Tools & Support", "Web UX & Accessibility"]:
+        df_u_filtered[col + " (Score)"] = df_u_filtered[col].map(score_map).fillna(3)
+
+    if len(df_u_filtered) > 1:
+        radar_df = df_u_filtered[["University"] + [col + " (Score)" for col in [
+            "Transparency of Info", "Application Process Clarity", "Data Disclosure",
+            "Timeline Visibility", "Tools & Support", "Web UX & Accessibility"
+        ]]]
+        radar_df = radar_df.set_index("University").T
+        st.plotly_chart(px.line_polar(
+            radar_df.reset_index().melt(id_vars="index", var_name="University", value_name="Score"),
+            r="Score", theta="index", color="University", line_close=True,
+            title="Indicadores clave por universidad (Grado)"
+        ), use_container_width=True)
+    else:
+        st.info("Selecciona al menos dos universidades para ver el gráfico radar.")
+
+    if len(df_u_filtered) == 1:
+        st.subheader("📄 Ficha Detallada")
+        uni = df_u_filtered.iloc[0]
+        st.markdown(f"### 🎓 {uni['University']}")
+        st.markdown(f"**Tipos de ayuda**: {uni['Types of Aid']}")
+        st.markdown(f"**Importe de las becas**: {uni['Scholarship Amounts']}")
+        st.markdown(f"**Transparencia**: {uni['Transparency of Info']}")
+        st.markdown(f"**Claridad del proceso**: {uni['Application Process Clarity']}")
+        st.markdown(f"**Divulgación de datos**: {uni['Data Disclosure']}")
+        st.markdown(f"**Visibilidad del calendario**: {uni['Timeline Visibility']}")
+        st.markdown(f"**Préstamos ofrecidos**: {uni['Loans Offered']}")
+        st.markdown(f"**Herramientas y soporte**: {uni['Tools & Support']}")
+        st.markdown(f"**Accesibilidad web**: {uni['Web UX & Accessibility']}")
+        st.markdown(f"**Coste de vida**: {uni['Cost of Living Info']}")
+        st.markdown(f"**Valoración Global**: {uni['Overall Impression']} / 5 ⭐")
+
+    st.subheader("🏆 Ranking por Valoración Global")
+    ranking_df_u = df_u_filtered.sort_values(by="Overall Impression", ascending=False)
+
+    fig = px.bar(
+        ranking_df_u,
+        x="Overall Impression",
+        y="University",
+        orientation='h',
+        color="Overall Impression",
+        color_continuous_scale="Blues",
+        title="Universidades ordenadas por valoración general (Grado)",
+        labels={"Overall Impression": "Valoración", "University": "Universidad"}
+    )
+    fig.update_layout(yaxis=dict(autorange="reversed"))
+    st.plotly_chart(fig, use_container_width=True)
+
+    st.download_button(
+        label="⬇️ Descargar Comparativa (Grado)",
+        data=ranking_df_u.to_csv(index=False).encode('utf-8'),
+        file_name="benchmarking_undergraduate.csv",
+        mime="text/csv"
+    )
+
 
 # Página 3 - Comparador de Máster
 elif pagina == "🎓 Comparador de Becas para Máster":
