@@ -1,6 +1,7 @@
 # 📘 Comparador de Universidades por Ayuda Financiera – IE University
 
-**Autores:** Valentina Bailon Cano  y Beatriz De Marcos
+**Autores:** Valentina Bailon Cano y Beatriz De Marcos
+
 **Proyecto desarrollado para:** Departamento de Financial Aid – IE University  
 **Fecha:** Verano 2025  
 **Tecnologías:** Python · Streamlit · Pandas · Plotly · GitHub · OCR
