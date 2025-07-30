@@ -296,35 +296,57 @@ Puedes seleccionar universidades en el menú lateral para explorar su oferta de 
     )
 
 # Página 4 - Recomendaciones
+# Página 4 - Recomendaciones
 elif pagina == "💡 Recomendaciones para IE":
     st.title("💡 Recomendaciones Estratégicas para IE University")
     st.markdown("""
-Basado en el análisis de 12 universidades top europeas y globales, IE podría mejorar su estrategia de ayuda financiera en los siguientes aspectos:
+Estas recomendaciones se basan en el análisis comparativo de ayudas financieras en universidades internacionales de prestigio, aplicando criterios como transparencia, claridad, soporte y diferenciación.  
+Se presentan divididas por **Grado** y **Máster**, para maximizar el valor percibido por cada tipo de candidato.
 
 ---
 
-### 🧭 1. Mayor Transparencia de Datos
-- Publicar estadísticas reales sobre:
-  - % de estudiantes becados
-  - Importe medio
-  - Presupuesto total de becas
+## 🎓 Recomendaciones para Grado
 
-### 🤝 2. Más Herramientas de Apoyo al Usuario
-- Añadir calculadoras de elegibilidad / estimadores.
-- Incluir un chatbot funcional o guía interactiva.
+### 1. 🧒 Mayor enfoque a perfiles sin experiencia universitaria
+- Simplificar el lenguaje en la sección de becas.
+- Incluir vídeos/pasos guiados para padres y alumnos preuniversitarios.
+- Visibilizar mejor las becas regionales y acuerdos con colegios.
 
-### 🌍 3. Información de Coste de Vida más Visible
-- Integrar los costes mensuales directamente en las páginas de becas.
-- Comparativas entre Segovia y Madrid.
+### 2. 📍 Calculadora pregrado + orientación visual
+- Añadir simuladores que muestren matrícula, ayuda y coste de vida adaptado a Segovia o Madrid.
+- Posibilidad de comparar 2 o más programas.
 
-### 🗓️ 4. Mejores Cronogramas y Visibilidad de Rondas
-- Mostrar fechas claras para cada tipo de ayuda.
-- Especificar impacto de aplicar en Ronda 1 vs 4.
+### 3. 💬 Canal de consulta informal (WhatsApp/Discord/Embajadores)
+- Crear un canal seguro donde aspirantes puedan hablar con estudiantes actuales becados de grado.
 
-### 💬 5. Centralización del Portal
-- Unificar becas, préstamos, y FAQ en una sola página intuitiva.
+### 4. 🏫 Posicionamiento diferenciador en acceso equitativo
+- Crear becas públicas tipo "IE First Gen" o "IE Rural Talent" que refuercen inclusión y compromiso social.
+
+### 5. 🧠 Alineación emocional con los valores del candidato
+- Dar protagonismo a historias de impacto personal, alumnos de primera generación o con trayectorias atípicas.
 
 ---
 
-Estas ideas pueden posicionar a IE como referente europeo no solo en diversidad de fondos, sino también en **claridad y experiencia del usuario**.
+## 🎓 Recomendaciones para Máster
+
+### 1. 📊 Publicar ratios de concesión por programa y ronda
+- Mostrar % de éxito histórico en másteres clave (MIM, MBAs, Finance, Law…).
+- Ayuda a gestionar expectativas y planificar cuándo aplicar.
+
+### 2. 💼 Becas con valor de red y empleabilidad
+- Asociar ayudas a programas de mentoring, empresas partner o eventos de networking exclusivos.
+
+### 3. 🌍 Becas globales temáticas (Tech, Impact, Women in Leadership)
+- IE puede posicionarse como referente en becas asociadas a impacto, innovación y liderazgo.
+
+### 4. 🕐 Acompañamiento post-concesión
+- Tras otorgar la beca, ofrecer asesoría financiera clara sobre matrícula, visado, housing y primeros meses.
+
+### 5. 🏷️ Valor añadido en visibilidad externa
+- IE puede destacar mejor en plataformas internacionales (QS, StudyPortals) mostrando herramientas, claridad y casos de éxito de su proceso.
+
+---
+
+Estas medidas no solo mejorarían la percepción del candidato, sino que **potenciarían la conversión**, reforzarían la **equidad institucional**, y diferenciarían a IE frente a otras escuelas top europeas y globales.
 """)
+
